@@ -3,6 +3,7 @@ namespace Sitecore.Support.ASL.ParamsStorage
 {
   using System;
   using System.Collections.Specialized;
+  using System.Reflection;
   using System.Web;
   using Sitecore.Diagnostics;
   using Sitecore.Text;
@@ -22,7 +23,10 @@ namespace Sitecore.Support.ASL.ParamsStorage
 
     public void Flush(ref UrlString url)
     {
-      this.handle.Add(url, UrlHandleStorage.HandleName);
+      Assert.ArgumentNotNull(url, "urlString");
+      // To workaround issue 423453:
+      // this.handle.Add(url, UrlHandleStorage.HandleName);
+      this.handle.AddFixed(url, UrlHandleStorage.HandleName);
     }
 
     public void Clear()
@@ -78,6 +82,29 @@ namespace Sitecore.Support.ASL.ParamsStorage
       }
 
       return string.IsNullOrWhiteSpace(handleValue) ? null : handleValue;
+    }
+  }
+
+  // To workaround issue 423453 in the line:
+  internal static class Issue423453
+  {
+    private static readonly FieldInfo fiValues;
+
+    static Issue423453()
+    {
+      fiValues = typeof(Sitecore.Web.UrlHandle).GetField("_values", BindingFlags.Instance | BindingFlags.NonPublic);
+    }
+
+    public static void AddFixed(this UrlHandle handle, UrlString urlString, string handleName)
+    {
+      Assert.ArgumentNotNull(handle, "handle");
+      Assert.ArgumentNotNull(urlString, "urlString");
+      Assert.ArgumentNotNullOrEmpty(handleName, "handleName");
+
+      var values = fiValues.GetValue(handle) as NameValueCollection;
+      var str = new UrlString(values);
+      urlString[handleName] = handle.Handle;
+      WebUtil.SetSessionValue(handle.Handle, str.ToString());
     }
   }
 }
