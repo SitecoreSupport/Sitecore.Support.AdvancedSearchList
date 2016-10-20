@@ -1,0 +1,6 @@
+src/.vs/
+src/packages/
+src/Sitecore.Support.AdvancedSearchList/bin/
+src/Sitecore.Support.AdvancedSearchList/obj/
+*.pubxml
+*.user
