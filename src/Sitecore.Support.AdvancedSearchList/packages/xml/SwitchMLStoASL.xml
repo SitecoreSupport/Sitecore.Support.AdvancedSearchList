@@ -1,0 +1,57 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>SwitchMLStoASL</PackageName>
+      <Author />
+      <Version />
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Entries>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/{71A08B10-43D2-40DC-AB1A-B9E916FA780A}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/Menu/{976554D2-602A-4A90-AC56-D1D9BC1FFD13}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/Menu/Deselect All/{A09499F0-5258-4790-9CC2-29D5C7497260}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/Menu/Select Items/{58FEB815-BFA7-4704-BB56-CC1197994A81}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/MenuDisabled/{DB590140-D17E-46C5-B511-727E9042A21A}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/MenuDisabled/Deselect All/{EBAE6B75-2855-4379-A368-34F478974C69}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Multilist with Search/MenuDisabled/Select All/{0E390141-DFDE-4F87-8E28-1864C0CB631F}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Items</Name>
+    </xitems>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

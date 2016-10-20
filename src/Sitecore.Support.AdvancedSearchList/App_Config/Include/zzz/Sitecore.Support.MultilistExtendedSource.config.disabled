@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <pipelines>
+      <getLookupSourceItems>
+         <processor patch:after="*[@type='Sitecore.Pipelines.GetLookupSourceItems.ProcessQuerySource, Sitecore.Kernel']" type="Sitecore.Support.Pipelines.GetLookupSourceItems.ProcessMultilistWithSearchSource, Sitecore.Support.ASL" />
+      </getLookupSourceItems>
+    </pipelines>
+  </sitecore>
+</configuration>

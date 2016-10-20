@@ -1,0 +1,54 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>AdvancedSearchList_Items</PackageName>
+      <Author>Ivan Domashchenko</Author>
+      <Version />
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Entries>
+        <x-item>/core/sitecore/system/Field types/List Types/Search List/{E0D20F2F-CE65-4FE1-814F-1725CE68AD7D}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Search List/Menu/{54F322D0-F000-4A64-9BC1-4DD6666620DA}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Search List/Menu/Deselect All/{191D9BF0-C44D-4FF6-91D6-C37A439E7246}/invariant/0</x-item>
+        <x-item>/core/sitecore/system/Field types/List Types/Search List/Menu/Select Items/{700D234B-B10A-4B94-9D42-3194321169E2}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Items</Name>
+    </xitems>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

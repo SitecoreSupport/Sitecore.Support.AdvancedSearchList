@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ASLSelectItems>
+    <FormDialog Header="Select Items" Text="Search for the items that you want to add to the field, click on them to select." OKButton="OK">
+      <Stylesheet Src="ASL/FixFor72.css" runat="server" />
+      <Stylesheet Key="Style">
+
+        .scDataSourceResultContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 35px;
+        background: white;
+        border: 1px solid #CFCFCF;
+        margin-bottom: 15px;
+        }
+
+        .scItemLink {
+        position:absolute;
+        bottom:0;
+        width:100%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+      </Stylesheet>
+       
+       <CodeBeside Type="Sitecore.Support.ASL.ASLSelectItemsForm,Sitecore.Support.ASL"/>
+       
+       <DataContext ID="InternalLinkDataContext"/>
+      <div class="scStretch">
+        <div class="scDataSourceResultContainer">
+          <Frame ID="search" SourceUri="/sitecore/shell/Applications/Buckets/ASLSelectItems.aspx"></Frame>
+        </div>
+        <GridPanel columns="2" class="scFormTable scItemLink">
+          <Literal Text="Selected items:"/>
+          <Edit ID="selectedItems" class="BindMeToItem" ReadOnly="true" />
+        </GridPanel>
+      </div>
+    </FormDialog>
+  </ASLSelectItems>
+</control>
