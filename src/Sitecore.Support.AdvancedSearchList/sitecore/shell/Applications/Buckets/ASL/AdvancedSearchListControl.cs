@@ -6,6 +6,7 @@ namespace Sitecore.Support.ASL
   using System.Text;
   using System.Web.UI;
   using Sitecore;
+  using Sitecore.Annotations;
   using Sitecore.ContentSearch.Diagnostics;
   using Sitecore.Data;
   using Sitecore.Data.Items;
