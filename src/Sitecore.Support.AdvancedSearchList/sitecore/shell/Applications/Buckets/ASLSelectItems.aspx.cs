@@ -3,6 +3,7 @@ namespace Sitecore.Support.ASL
 {
   using System;
   using System.Text;
+  using System.Web;
   using System.Web.UI;
   using Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets;
   using Sitecore.Buckets.Pipelines.UI.ExpandIdBasedSearchFilters;
@@ -97,7 +98,7 @@ namespace Sitecore.Support.ASL
 
       var args = new ExpandIdBasedSearchFiltersArgs(value, db);
       ExpandIdBasedSearchFiltersPipeline.Run(args);
-      return WebUtil.EscapeJavascriptString(args.ExpandedFilters);
+      return HttpUtility.JavaScriptStringEncode(args.ExpandedFilters);
     }
 
    protected string GetDefaultClauses(ID fieldId)
@@ -132,7 +133,7 @@ namespace Sitecore.Support.ASL
      {
        if (Sitecore.Data.ID.IsID(id))
        {
-         sb.AppendFormat("\"{0}\",", WebUtil.EscapeJavascriptString(id));
+         sb.AppendFormat("\"{0}\",", HttpUtility.JavaScriptStringEncode(id));
        }
        else
        {
@@ -146,7 +147,7 @@ namespace Sitecore.Support.ASL
 
    protected string PrepareIndexParameter(string value)
    {
-     return value.IsNullOrEmpty() ? string.Empty : string.Format("var aslIndex = '{0}';", WebUtil.EscapeJavascriptString(value));
+     return value.IsNullOrEmpty() ? string.Empty : string.Format("var aslIndex = '{0}';", HttpUtility.JavaScriptStringEncode(value));
    }
   }
 
